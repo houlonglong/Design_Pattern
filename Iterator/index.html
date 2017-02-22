@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+//迭代器模式
+var arr = [1, 2, 3];
+var Iterator = (function(){
+    var length = arr.length,
+        index = 0;
+    return {
+        hasNext: function() {
+        	console.log(index < length)
+            return index < length
+        },
+        Next: function() {
+            var data = arr[index]
+            index = index + 1;
+            return data
+        },
+        reset:function(){
+        	index = 0 ;
+        }
+
+    }
+})()
+
+while(Iterator.hasNext()){
+	console.log(Iterator.Next())
+}
+
+</script>
+
+</html>
